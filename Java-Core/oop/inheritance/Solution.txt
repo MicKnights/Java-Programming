@@ -1,0 +1,56 @@
+public class Main {
+
+    public static void main(String[] args) {
+        Animal animal = new Animal(0, 0, "makes sound");
+        Monkey monkey = new Monkey(2, 2, "oo oo ah ah");
+        Lion lion = new Lion(4, 0, "roar");
+
+        animal.makeSound();
+        monkey.makeSound();
+        lion.makeSound();
+        
+    }
+    
+}
+
+/*
+ * create an animal class with attributes int legs, int arms and String sound
+ * that assigned by animal constructor
+ */
+
+class Animal{
+    int legs;
+    int arms;
+    String sound;
+
+    public Animal(int legs, int arms, String sound){
+        this.legs = legs;
+        this.arms = arms;
+        this.sound = sound;
+    }
+
+    public void makeSound(){
+        System.out.println(sound);
+    }
+
+}
+
+/*
+ * create a monkey and lion class that inherit from animal class
+ */
+
+class Monkey extends Animal{
+
+    public Monkey(int legs, int arms, String sound) {
+        super(legs, arms, sound);
+    }
+
+}
+
+class Lion extends Animal{
+
+    public Lion(int legs, int arms, String sound) {
+        super(legs, arms, sound);
+    }
+
+}

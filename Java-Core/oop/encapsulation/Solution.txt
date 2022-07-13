@@ -1,0 +1,68 @@
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Default obj0 = new Default();
+        Public obj1 = new Public();
+        Protected obj2 = new Protected();
+        Private obj3 = new Private();
+        
+        //pass
+        obj0.print(obj0.number, obj0.word);
+
+        //pass
+        obj1.print(obj1.number, obj1.word);
+
+        //pass
+        obj2.print(obj2.number, obj2.word);
+        
+        //fail error: word has private access in Private
+        // obj3.print(obj3.number, obj3.word);
+
+        
+    }
+    
+}
+
+
+class Default{
+    int number = 0;
+    String word = "zero";
+
+    public void print(int number, String word){
+        System.out.println("number equal: "+number+" and word is: "+word);
+    }
+
+}
+
+class Public{
+    public int number = 1;
+    public String word = "one";
+
+    public void print(int number, String word){
+        System.out.println("number equal: "+number+" and word is: "+word);
+    }
+
+}
+ 
+
+class Protected{
+    protected int number = 2;
+    protected String word = "two";
+
+    public void print(int number, String word){
+        System.out.println("number equal: "+number+" and word is: "+word);
+    }
+
+}
+
+class Private{
+    private int number = 3;
+    private String word = "three";
+
+    public void print(int number, String word){
+        System.out.println("number equal: "+number+" and word is: "+word);
+    }
+
+}
